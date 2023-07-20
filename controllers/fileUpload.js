@@ -11,8 +11,8 @@ exports.localFileUpload = async (req, res) => {
 
 
         //create path where file need to be stored on server
-        let path = __dirname + "/files/" + Date.now();
-        console.log("PATH-> ", path)
+        let path = __dirname + "/files/" + Date.now() +`.${file.name.split('.')[1]}`;
+        console.log("PATH-> ", path)       //current time in  milisecond
 
         //add path to the move fucntion
         file.mv(path , (err) => {
