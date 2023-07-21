@@ -8,7 +8,9 @@ const PORT = process.env.PORT || 3000;
 //middleware add krne h 
 app.use(express.json());
 const fileupload = require("express-fileupload");
-app.use(fileupload());   //iss middleware ka use kr ke ham server par file upload krege
+app.use(fileupload({useTempFiles : true,
+    tempFileDir : '/tmp/'
+ } ));   //iss middleware ka use kr ke ham server par file upload krege
                           // cloudinary media server pr upload krta hai
 
 //db se connect krna h 
